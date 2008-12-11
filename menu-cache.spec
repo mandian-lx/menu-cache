@@ -1,11 +1,10 @@
 Summary:	A library to speed up freedesktop.org application menus
 Name:     	menu-cache
-Version:	0.2.1
+Version:	0.2.2
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
-Source1:	http://lxde.svn.sourceforge.net/viewvc/lxde/trunk/menu-cache/libmenu-cache/version.h
 URL:		http://lxde.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	glib2-devel
@@ -67,7 +66,6 @@ This package contains development files for %name.
 #----------------------------------------------------------------------
 %prep
 %setup -q -n %name-%version
-cp %{SOURCE1} libmenu-cache/
 
 %build
 %configure2_5x --disable-static
