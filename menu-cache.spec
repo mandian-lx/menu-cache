@@ -1,6 +1,6 @@
 Summary:	A library to speed up freedesktop.org application menus
 Name:     	menu-cache
-Version:	0.2.3
+Version:	0.2.4
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Other
@@ -28,6 +28,7 @@ Advantages:
 %defattr(-, root, root)
 %{_bindir}/*
 %{_libexecdir}/menu-cached
+%{_mandir}/man1/menu-cached.1.*
 
 #----------------------------------------------------------------------
 
