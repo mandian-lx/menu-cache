@@ -26,9 +26,7 @@ Advantages:
 
 %files -f %{name}.lang
 %defattr(-, root, root)
-%{_bindir}/*
-%{_libexecdir}/menu-cached
-%{_mandir}/man1/menu-cached.1.*
+%{_libexecdir}/*
 
 #----------------------------------------------------------------------
 
