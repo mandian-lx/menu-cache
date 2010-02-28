@@ -34,7 +34,7 @@ Advantages:
 %define libname %mklibname %name %major
 %package -n %libname
 Group:		Graphical desktop/Other
-Requires:	%name = %version
+Requires:	%name >= %version
 Summary:	Contains shared libraries for %name
 
 %description -n %libname
