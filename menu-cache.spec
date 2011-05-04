@@ -1,7 +1,7 @@
 Summary:	A library to speed up freedesktop.org application menus
 Name:     	menu-cache
 Version:	0.3.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
