@@ -1,13 +1,12 @@
 Summary:	A library to speed up freedesktop.org application menus
-Name:     	menu-cache
+Name:		menu-cache
 Version:	0.3.2
-Release:	%mkrel 3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
 Patch0:		menu-cache-0.2.3-fix-str-fmt.patch
 URL:		http://lxde.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	glib2-devel
 BuildRequires:	intltool
 
@@ -25,48 +24,46 @@ Advantages:
 5. Greatly reduced disk I/O.
 
 %files -f %{name}.lang
-%defattr(-, root, root)
 %{_libexecdir}/menu-cache*
 
 #----------------------------------------------------------------------
 
 %define major 1
-%define libname %mklibname %name %major
-%package -n %libname
+%define libname %mklibname %{name} %{major}
+
+%package -n %{libname}
 Group:		Graphical desktop/Other
-Requires:	%name >= %version
-Summary:	Contains shared libraries for %name
+Requires:	%{name} >= %{version}
+Summary:	Contains shared libraries for %{name}
 
-%description -n %libname
-This package contains shared libraries for %name.
+%description -n %{libname}
+This package contains shared libraries for %{name}.
 
-%files -n %libname
-%defattr(-, root, root)
+%files -n %{libname}
 %{_libdir}/*.so.%{major}*
 
 #----------------------------------------------------------------------
 
-%define develname %mklibname -d %name
-%package -n %develname
+%define develname %mklibname -d %{name}
+
+%package -n %{develname}
 Group:		Graphical desktop/Other
-Requires:	%libname = %version
-Summary:	Contains development files for %name
-Provides:       %name-devel = %version
-Provides:       lib%name-devel = %version
+Requires:	%{libname} = %{version}
+Summary:	Contains development files for %{name}
+Provides:	%{name}-devel = %{version}
+Provides:	lib%{name}-devel = %{version}
 
-%description -n %develname
-This package contains development files for %name.
+%description -n %{develname}
+This package contains development files for %{name}.
 
-%files -n %develname
-%defattr(-, root, root)
-%_libdir/*.la
-%_libdir/*.so
-%_includedir/%name
-%_libdir/pkgconfig/*.pc
+%files -n %{develname}
+%{_libdir}/*.so
+%{_includedir}/%{name}
+%{_libdir}/pkgconfig/*.pc
 
 #----------------------------------------------------------------------
 %prep
-%setup -q -n %name-%version
+%setup -q
 %patch0 -p0
 
 %build
@@ -74,10 +71,10 @@ This package contains development files for %name.
 %make
 
 %install
-rm -rf %buildroot
+rm -rf %{buildroot}
 %makeinstall_std
 
-%{find_lang} %{name}
+%find_lang %{name}
 
 %clean
-rm -rf %buildroot
+rm -rf %{buildroot}
