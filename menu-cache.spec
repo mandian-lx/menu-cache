@@ -4,7 +4,7 @@ Version:	0.3.2
 Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Source0: 	http://dfn.dl.sourceforge.net/sourceforge/lxde/%name-%version.tar.gz
+Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.gz
 Patch0:		menu-cache-0.2.3-fix-str-fmt.patch
 URL:		http://lxde.sourceforge.net/
 BuildRequires:	glib2-devel
@@ -23,7 +23,7 @@ Advantages:
 4. Less unnecessary and complicated file monitoring.
 5. Greatly reduced disk I/O.
 
-%files -f %{name}.lang
+%files
 %{_libexecdir}/menu-cache*
 
 #----------------------------------------------------------------------
@@ -73,8 +73,6 @@ This package contains development files for %{name}.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-%find_lang %{name}
 
 %clean
 rm -rf %{buildroot}
