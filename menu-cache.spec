@@ -41,7 +41,6 @@ Group:		Graphical desktop/Other
 Requires:	%{libname} = %{version}
 Summary:	Contains development files for %{name}
 Provides:	%{name}-devel = %{version}
-Provides:	lib%{name}-devel = %{version}
 
 %description -n	%{devname}
 This package contains development files for %{name}.
