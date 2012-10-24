@@ -23,45 +23,29 @@ Advantages:
 4. Less unnecessary and complicated file monitoring.
 5. Greatly reduced disk I/O.
 
-%files
-%{_libexecdir}/menu-cache*
+%define	major	1
+%define	libname	%mklibname %{name} %{major}
 
-#----------------------------------------------------------------------
-
-%define major 1
-%define libname %mklibname %{name} %{major}
-
-%package -n %{libname}
+%package -n	%{libname}
 Group:		Graphical desktop/Other
 Requires:	%{name} >= %{version}
 Summary:	Contains shared libraries for %{name}
 
-%description -n %{libname}
+%description -n	%{libname}
 This package contains shared libraries for %{name}.
 
-%files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%define	devname	%mklibname -d %{name}
 
-#----------------------------------------------------------------------
-
-%define develname %mklibname -d %{name}
-
-%package -n %{develname}
+%package -n	%{devname}
 Group:		Graphical desktop/Other
 Requires:	%{libname} = %{version}
 Summary:	Contains development files for %{name}
 Provides:	%{name}-devel = %{version}
 Provides:	lib%{name}-devel = %{version}
 
-%description -n %{develname}
+%description -n	%{devname}
 This package contains development files for %{name}.
 
-%files -n %{develname}
-%{_libdir}/*.so
-%{_includedir}/%{name}
-%{_libdir}/pkgconfig/*.pc
-
-#----------------------------------------------------------------------
 %prep
 %setup -q
 %patch0 -p0
@@ -71,8 +55,15 @@ This package contains development files for %{name}.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
+%files
+%{_libexecdir}/menu-cache*
+
+%files -n %{libname}
+%{_libdir}/lib%{name}.so.%{major}*
+
+%files -n %{devname}
+%{_libdir}/lib%{name}.so
+%{_includedir}/%{name}
+%{_libdir}/pkgconfig/*.pc
