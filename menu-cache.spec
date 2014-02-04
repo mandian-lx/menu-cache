@@ -8,6 +8,7 @@ Url:		http://lxde.sourceforge.net/
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	gtk-doc
 
 %description
 Libmenu-cache is a library creating and utilizing caches to speed up
