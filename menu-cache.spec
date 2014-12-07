@@ -8,7 +8,7 @@ Source0:	%{name}-%{git}.tar.xz
 Release:	0.%git.1
 %else
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
-Release:	1
+Release:	2
 %endif
 License:	GPLv2+
 Group:		Graphical desktop/Other
