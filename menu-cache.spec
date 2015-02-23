@@ -1,18 +1,18 @@
-%define git 20140802
+%define git %{nil}
 
 Summary:	A library to speed up freedesktop.org application menus
 Name:		menu-cache
-Version:	0.6.0
+Version:	1.0.0
 %if %git
 Source0:	%{name}-%{git}.tar.xz
 Release:	0.%git.1
 %else
-Source0:	http://dfn.dl.sourceforge.net/sourceforge/lxde/%{name}-%{version}.tar.xz
-Release:	2
+Source0:	https://github.com/lxde/menu-cache/archive/%{name}-%{version}.tar.xz
+Release:	1
 %endif
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Url:		http://lxde.sourceforge.net/
+Url:		https://github.com/lxde/menu-cache
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	gtk-doc
