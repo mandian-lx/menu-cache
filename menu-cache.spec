@@ -1,4 +1,4 @@
-%define git %{nil}
+%define git 0
 
 Summary:	A library to speed up freedesktop.org application menus
 Name:		menu-cache
