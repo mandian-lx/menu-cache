@@ -16,6 +16,7 @@ Url:		https://github.com/lxde/menu-cache
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	gtk-doc
+BuildRequires:	pkgconfig(libfm-extra)
 
 %description
 Libmenu-cache is a library creating and utilizing caches to speed up
