@@ -2,20 +2,17 @@
 
 Summary:	A library to speed up freedesktop.org application menus
 Name:		menu-cache
-Version:	1.0.0
+Version:	1.0.1
 %if %git
 Source0:	%{name}-%{git}.tar.xz
 Release:	0.%git.1
 %else
-Source0:	https://github.com/lxde/menu-cache/archive/%{name}-%{version}.tar.xz
-Release:	3
+Source0:	https://github.com/lxde/menu-cache/archive/%{name}-%{version}.tar.gz
+Release:	1
 %endif
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://github.com/lxde/menu-cache
-# (tpg) patches from upstream git
-Patch0:		menu-cache-1.0.0-Fix-crash-on-generating-menu-with-both-tags.patch
-Patch1:		menu-cache-1.0.0-Fix-crash-when-menu-cache-gen-ran-manually-without-CACHE_GEN_VERSION.patch
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	gtk-doc
